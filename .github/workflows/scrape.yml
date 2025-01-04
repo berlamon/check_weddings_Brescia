@@ -1,0 +1,30 @@
+name: Daily Web Parser
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs at 08:00 UTC daily
+  workflow_dispatch:      # Allows manual runs from the Actions tab
+
+jobs:
+  run-parser:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - uses: actions/checkout@v2
+
+      # Step 2: Set up Python 3.9 (can be 3.10 or another version)
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      # Step 4: Run your parser script
+      - name: Run Parser
+        run: |
+          python my_parser.py
