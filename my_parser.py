@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def check_website():
-    url = "https://example.com"  # <-- Change this to your target URL
+    url = "https://albopretorio.comune.brescia.it/web/trasparenza/pubblicazioni-di-matrimonio"  # <-- Change this to your target URL
     response = requests.get(url)
 
     if response.status_code == 200:
