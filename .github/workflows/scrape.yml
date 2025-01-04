@@ -1,8 +1,8 @@
 name: Daily Web Parser
 
 on:
-  schedule:
-    - cron: '0 8 * * *'  # Runs at 08:00 UTC daily
+#  schedule:
+#   - cron: '0 8 * * *'  Runs at 08:00 UTC daily
   workflow_dispatch:      # Allows manual runs from the Actions tab
 
 jobs:
